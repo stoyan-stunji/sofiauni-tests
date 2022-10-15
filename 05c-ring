@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{    
+    cout << "\n";
+    cout << "C) Is a point (x;y) within the ring with (r;R) = (2,8)?\n";
+    cout << "Enter the first coordinate x: \n";
+    int fcx = 0;
+    cin >> fcx;
+    cout << "Enter the second coordinate y: \n";
+    int fcy = 0;
+    cin >> fcy;
+
+    int distance = sqrt(pow(fcx - 2, 2) + pow(fcy - 8, 2));
+
+    bool isInRing = (2 <= distance) && (distance <= 8);
+
+    cout << boolalpha << isInRing << endl;
+}
