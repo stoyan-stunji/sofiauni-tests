@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "The holiday starts from 22.01.2022 \nEnter the number of days of the holiday: \n";
+    int n = 0;
+    cin >> n;
+    int month = 1;
+
+    int dateBackToSchool = 22 + n;
+
+    if (dateBackToSchool > 31)
+    {
+        dateBackToSchool = dateBackToSchool - 31;
+        month++;
+        cout << "The students must be back to school on " << "0" << dateBackToSchool << ".0" << month << ".2022." << endl;
+    }
+    else
+    {
+        cout << "The students must be back to school on " << dateBackToSchool << ".0" << month << ".2022." << endl;
+    }
+    return 0;
+}
+
