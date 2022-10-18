@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter a character: \n";
+    char character;
+    cin >> character;
+
+    bool isSmallLetter = (character >= 'a' && character <= 'z');
+    bool isBigLetter = (character >= 'A' && character <= 'Z');
+    bool isNumber = (character >= '1' && character <= '9');
+
+    if (isSmallLetter)
+    {
+        cout << "You have entered a small letter. Congratulations!" << endl;
+    }
+    else if (isBigLetter)
+    {
+        cout << "You have entered a big letter. Congratulations!" << endl;
+    }
+    else if (isNumber)
+    {
+        cout << "You have entered a number. Congratulations!" << endl;
+    }
+    else
+    {
+        cout << "You have entered..."
+            " Are you f*cking kidding me? You think I am stupid! F*ck you! \n" 
+            << character << " <--- Here's your f*cking character!" << endl;
+    }
+   
+    return 0;
+}
+
