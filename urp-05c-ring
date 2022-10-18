@@ -4,19 +4,35 @@
 using namespace std;
 
 int main()
-{    
-    cout << "\n";
-    cout << "C) Is a point (x;y) within the ring with (r;R) = (2,8)?\n";
+{
+    cout << "Is a point (x;y) within a ring (0;0) and a radius r1 = 2 && r2 = 8?\n";
     cout << "Enter the first coordinate x: \n";
-    int fcx = 0;
-    cin >> fcx;
+    int pointX = 0;
+    cin >> pointX;
     cout << "Enter the second coordinate y: \n";
-    int fcy = 0;
-    cin >> fcy;
+    int pointY = 0;
+    cin >> pointY;
 
-    int distance = sqrt(pow(fcx - 2, 2) + pow(fcy - 8, 2));
+    const int RADIUS1 = 2;
+    const int RADIUS2 = 8;
+    const int RINGX = 0;
+    const int RINGY = 0;
 
-    bool isInRing = (2 <= distance) && (distance <= 8);
+    bool isInRing1 = pow(RADIUS1, 2) <= pow((pointX - RINGX), 2)
+        + pow((pointY - RINGY), 2);
 
-    cout << boolalpha << isInRing << endl;
+    bool isInRing2 = pow(RADIUS2, 2) >= pow((pointX - RINGX), 2)
+        + pow((pointY - RINGY), 2);
+
+    if (isInRing1 == true && isInRing2 == true)
+    {
+        cout << boolalpha << "The point is IN the ring." << endl;
+    }
+    else
+    {
+        cout << boolalpha << "The point is OUT of the ring." << endl;
+    }
+
+    return 0;
 }
+
