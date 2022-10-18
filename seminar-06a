@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Is a point (x;y) within a circle (0;0) and a radius r = 1?\n";
+    cout << "Enter the first coordinate x: \n";
+    double pointX = 0;
+    cin >> pointX;
+    cout << "Enter the second coordinate y: \n";
+    double pointY = 0;
+    cin >> pointY;
+
+    const double RADIUS = 1;
+    const double CIRCLEX = 0;
+    const double CIRCLEY = 0;
+
+    bool isInCircle = pow(RADIUS, 2) >= pow((pointX - CIRCLEX), 2)
+        + pow((pointY - CIRCLEY), 2);
+
+    cout << boolalpha << isInCircle << endl;
+
+    return 0;
+}
+
