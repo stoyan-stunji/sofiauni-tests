@@ -16,7 +16,7 @@ int main()
         cout << "Enter an year: \n";
         cin >> year;
 
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400))
+        if ((year % 4 == 0 && year % 100 != 0) || (year % == 400))
         {
             isLeap = true;
         }
