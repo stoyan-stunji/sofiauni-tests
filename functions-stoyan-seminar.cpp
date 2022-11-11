@@ -48,7 +48,7 @@ long long int factorial(int input)
 	return result;
 }
 
-bool prime(int input)
+bool prime(int input) //Optimus Prime
 {
 	if (input < 1 || input > 100)
 	{
