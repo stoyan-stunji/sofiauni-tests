@@ -29,22 +29,18 @@ int square(int input)
 	return input * input;
 }
 
-int factorial(int input)
+long long int factorial(int input)
 {
 	cout << "Enter a number between 0 and 20: \n";
 	cin >> input;
-	while (input < 0 && input > 20)
+	while (input < 0 || input > 20)
 	{
 		cout << "Please, enter a number between 0 and 20: \n";
 		cin >> input;
 
 	}
-	if (input <= 0)
-	{
-		return 1;
-	}
 
-	int result = 1;
+	long long int result = 1;
 	for (int i = 1; i <= input; i++)
 	{
 		result *= i;
@@ -116,7 +112,7 @@ int main()
 		case 3:
 			cout << square(input);
 			break;
-		case 4: //factorial не дава правилни резултати;
+		case 4: 
 			cout << factorial(input);
 			break;
 		case 5:
