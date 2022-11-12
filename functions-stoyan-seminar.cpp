@@ -56,7 +56,7 @@ bool prime(int input) //Optimus Prime
 	}
 	else
 	{
-		if (input <= 2)
+		if (input < 2)
 		{
 			return false;
 		}
