@@ -16,22 +16,6 @@ void welcome()
 		<< "8. Avarage of elements in an array.\n" << "9. Exit" << endl;
 }
 
-void exit()
-{
-	cout << "Goodbye! :(" << endl;
-}
-
-void enterArray(int array[], int length)
-{
-	cout << "\nEnter length of the array: \n";
-	cin >> length;
-	cout << "Enter the elements of the array: \n";
-	for (int i = 0; i < length; i++)
-	{
-		cin >> array[i];
-	}
-}
-
 void printArray(int array[], int length)
 {
 	for (int i = 0; i < length; i++)
@@ -65,18 +49,15 @@ void bubblesortArray(int array[], int length)
 
 void reverseArray(int array[], int length)
 {
-	int tempNum = 0;
 	for (int i = 0; i < length / 2; i++) 
 	{
-		tempNum = array[i];
-		array[i] = array[length - i - 1];
-		array[length - i - 1] = tempNum;
+		swap(array[i], array[length - i - 1]);
 	}
 
 	printArray(array, length);
 }
 
-void stringArray(char str[], char element)
+int stringArray(char str[], char element)
 {
 	cout << "Input:\n";
 	cin >> str;
@@ -89,7 +70,7 @@ void stringArray(char str[], char element)
 			counter += 1;
 		}
 	}
-	cout << counter;
+	return counter;
 }
 
 void shiftkElements(int array[], int length, int k)
@@ -116,7 +97,7 @@ void isPalindrome(int array[], int length)
 {
 	int palindrome = 0;
 
-	for (int i = 0; i < length / 2 && length != 0; i++)
+	for (int i = 0; i < length / 2; i++)
 	{
 		if (array[i] != array[length - i - 1]) 
 		{
@@ -135,7 +116,7 @@ void isPalindrome(int array[], int length)
 	}
 }
 
-void averageArray(int array[], int length)
+double averageArray(int array[], int length)
 {
 	cout << "\nEnter length of the array: \n";
 	cin >> length;
@@ -154,7 +135,13 @@ void averageArray(int array[], int length)
 	}
 
 	int average = sum / counter;
-	cout << "\nThe average of the array's elements is: " << average;
+	cout << "\nThe average of the array's elements is: ";
+	return average;
+}
+
+void exit()
+{
+	cout << "Goodbye! :(" << endl;
 }
 
 int main()
@@ -227,7 +214,7 @@ int main()
 			char element;
 			cout << "\nEnter the wanted element: \n";
 			cin >> element;
-			stringArray(str, element);
+			cout << stringArray(str, element);
 			cout << " times.";
 			break;
 		case 7:
@@ -241,7 +228,7 @@ int main()
 			isPalindrome(array, length);
 			break;
 		case 8:
-			averageArray(array, length);
+			cout << averageArray(array, length);
 			break;
 		case 9:
 			exit();
@@ -253,8 +240,7 @@ int main()
 		cout << "\n\n[1-9]\n";
 		cin >> input;
 	}
-    // 5
+        // 5
 	// 19 15 7 3 6
-
 	return 0;
 }
